@@ -1,0 +1,40 @@
+/* 
+ * This file is generated from examples/example-bootstrap.less.
+ * Do not edit the .css file, instead, edit the .less file and
+ * recompile it!
+ */
+
+/* Needs to import variables.less for font size and colors.
+ * The following values will be used:
+
+@baseFontSize:          14px;
+@tableBorder:           #ddd; // table and cell border
+@linkColor:             #08c;
+@tableBackgroundAccent: #f9f9f9; // for striping
+@grayDark:              #333;
+@textColor:             @grayDark;
+@navbarLinkColorHover:  @grayDark;
+
+*/
+@import "variables.less";
+@import "../bootstrap/slickgrid.less";
+
+.grid {
+    // Set dimensions
+    height: 380px;  // for 10 rows x 35px
+    width: 800px;
+
+    // Apply all grid styles
+    .SlickGrid();
+
+    // Add a bottom border to the grid.
+    border-bottom: 1px solid @tableBorder;
+}
+
+.grid-col {
+  padding: 35px;
+}
+.info-col {
+  padding: 20px;
+}
+

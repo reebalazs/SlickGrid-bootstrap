@@ -1,0 +1,17 @@
+{
+    "name": "slickgrid-bootstrap-dev",
+    "version": "0.1.0",
+    "devDependencies": {
+        "yo": "*",
+        "grunt-cli": "*",
+        "bower": "*",
+        "grunt": ">=0.4",
+        "grunt-contrib-jshint": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-concat": "*",
+        "grunt-contrib-less": "*",
+        "grunt-contrib-watch": "*",
+        "grunt-collection-helper": "git+https://github.com/reebalazs/grunt-collection-helper.git",
+        "buster": "*"
+    }
+}

@@ -1,0 +1,175 @@
+
+/* Mixins for SlickGrid */
+
+/* Used from variables.less:
+ *
+ * @baseFontSize (unless, font size is passed as an option)
+ * @tableBorder
+ * @linkColor
+ * @tableBackgroundAccent
+ * @textColor
+ * @navbarLinkColorHover
+ *
+ * This means that if you have an updated variable.less, the grid will
+ * follow your changes.
+ *
+ * Example usage:
+ *
+ * 
+    @import "variables.less";
+    @import "../bootstrap/slickgrid.less";
+
+    .grid {
+        // Set dimensions
+        height: 380px;  // for 10 rows x 35px
+        width: 800px;
+
+        // Apply all grid styles
+        .SlickGrid();
+
+        // Add a bottom border to the grid.
+        border-bottom: 1px solid @tableBorder;
+    }
+
+ *
+ */
+
+.SlickGrid (@fontSize:@baseFontSize,
+            @headerColumnHeight:20px) {
+
+    position: relative;
+
+    .SlickCell () {
+        // reset some essentials.
+        padding: 5px 7.5834px;
+        font-size: @fontSize;
+        td {
+            font-size: @fontSize;
+        }
+        body & {
+            line-height: 20px;
+        }
+    }
+
+    // Reset the margin of the checkboxes. The grid
+    // needs a selection checbox column. Bootstrap gives
+    // these elements a 4px top margin, which we have to reset
+    // by aligning to baseline.
+    input[type="checkbox"] {
+        vertical-align: baseline;
+        margin: 0;
+    }
+
+    .slick-viewport {
+        // Add a top border to visually separate the headers.
+        border-top: 1px solid @tableBorder;
+    }
+
+    .grid-canvas {
+        .slick-row {
+            border: 0 none;
+            position: absolute;
+            width: 100%;
+        }
+        .slick-cell, .slick-headerrow-column {
+            border-top: 0;
+            border-bottom: 1px solid @tableBorder;
+            border-left: 0;
+            border-right: 0;
+        }
+        .even {
+            background: @tableBackgroundAccent;
+        }
+        
+
+        /* XXX ... needed ? */
+        .slick-cell {
+            .SlickCell ();
+            a, a:visited, .ui-widget-content a, .ui-widget-content a:visited {
+                color: @linkColor;
+                text-decoration: none;
+            }
+            a:hover, .ui-widget-content a:hover {
+                color: @linkColorHover;
+                text-decoration: none;
+                border-bottom: none;
+            }
+            table {
+                height: 100%;
+                border: 0 none;
+                padding: 0;
+                background: none;
+            }
+            td {
+                border: 0 none;
+                padding: 0;
+                vertical-align: middle;
+                text-align: left;
+            }
+        }
+    }
+ 
+    .slick-header {
+        border-top: 0;
+        border-bottom: 0;
+    }
+
+    .slick-header-columns {
+        background: @tableBackground;
+
+        .slick-header-column {
+            height: @headerColumnHeight;
+            line-height: @fontSize;
+            margin: 0;
+            border: 0;
+            &.ui-state-default {
+                .SlickCell ();
+            }
+
+            @slickgridHoverHeaderColor: @textColor;
+            @slickgridSortingHeaderColor: @textColor;
+            
+            .ResetColumns () {
+                /* like TH  */
+                background: @tableBackground;
+                font-family: @sansFontFamily;
+                color: @textColor;
+                font-weight: bold;
+                text-shadow: 0 -1px 0 rgba(0,0,0,.4);
+                a, a:visited {
+                    color: @textColor;
+                }
+                a:hover {
+                    color: @slickgridHoverHeaderColor;
+                }    
+            }
+ 
+            .ResetColumns ();
+            &.ui-state-default {
+                .ResetColumns ();
+            }
+           
+            &.slick-header-column-sorted {
+                font-style: normal;
+                color: @slickgridSortingHeaderColor;
+            }
+            &:hover {
+                color: @slickgridHoverHeaderColor;
+            }
+
+            .slick-sort-indicator-asc {
+                vertical-align: middle;
+                //&:before {
+                //    border-top: 0;
+                //    border-bottom: .266666667em solid #fff;
+                //}
+            }
+
+            .slick-sort-indicator-desc {
+                vertical-align: middle;
+            }
+           
+        }
+    }
+
+}
