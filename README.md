@@ -2,12 +2,14 @@
 
 Support to make SlickGrid work with Twitter Bootstrap styles.
 
-Please visit the [live demo](http://reebalazs.github.com/SlickGrid-bootstrap/examples/example-bootstrap.html).
+Please visit the
+[live demo](http://reebalazs.github.com/SlickGrid-bootstrap/examples/example-bootstrap.html).
 
 
 ## SlickGrid is an advanced JavaScript grid/spreadsheet component
 
-To learn about SlickGrid, please check out [the SlickGrid wiki](/mleibman/SlickGrid/wiki).
+To learn about SlickGrid, please check out the
+[SlickGrid wiki](https://github.com/mleibman/SlickGrid/wiki).
 
 
 ## Running the examples locally
