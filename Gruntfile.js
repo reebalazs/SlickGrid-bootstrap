@@ -1,4 +1,6 @@
 
+var collect = require('grunt-collection-helper');
+
 module.exports = function(grunt) {
 
     // Project configuration.
@@ -7,23 +9,24 @@ module.exports = function(grunt) {
         less: {
             'default': {
                 options: {
-                    paths: ['examples', 'bootstrap', 'lib/bootstrap'],
+                    paths: ['examples', 'bootstrap', 'components/bootstrap/less'],
                     yuicompress: false
                 },
                 files: {
-                    'examples/example-bootstrap.css': [
-                        'examples/example-bootstrap.less'
-                    ]
+                    'examples/dist/example-bootstrap.css':
+                        collect.local('examples').select('example-bootstrap.css')
                 }
             }
         },
         watch: {
-            
             'default': {
                 options: {
                     debounceDelay: 250
                 },
-                files: ['examples/*.less', 'bootstrap/*.less'],
+                files: collect.local('examples').select('example-bootstrap.css').concat([
+                    'bootstrap/slickgrid.less',
+                    'components/bootstrap/less/variables.less'
+                ]),
                 tasks: ['less:default']
             }
         }
