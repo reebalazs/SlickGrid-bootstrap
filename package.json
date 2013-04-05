@@ -1,7 +1,7 @@
 {
     "name": "slickgrid-bootstrap-dev",
     "version": "0.1.0",
-    "devDependencies": {
+    "dependencies": {
         "yo": "*",
         "grunt-cli": "*",
         "bower": "*",
