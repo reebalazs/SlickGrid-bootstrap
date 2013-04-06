@@ -1,6 +1,6 @@
 {
     "example-bootstrap.css": [
-        "example-bootstrap.less"
+        "examples/example-bootstrap.less"
     ],
     "example-lib.css": [
         "bower:bootstrap:docs/assets/css/bootstrap.css",

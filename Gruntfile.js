@@ -12,8 +12,8 @@ module.exports = function(grunt) {
                 files: {
                     'examples/dist/':
                         [].concat(
-                            collect.local('examples').select('example-lib.css'),
-                            collect.local('examples').select('example-lib.js')
+                            collect.local().select('example-lib.css'),
+                            collect.local().select('example-lib.js')
                         )
                 }
             }
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'examples/dist/example-bootstrap.css':
-                        collect.local('examples').select('example-bootstrap.css')
+                        collect.local().select('example-bootstrap.css')
                 }
             }
         },
@@ -36,9 +36,9 @@ module.exports = function(grunt) {
                     debounceDelay: 250
                 },
                 files: [].concat(
-                    collect.local('examples').select('example-bootstrap.css'),
-                    collect.local('examples').select('example-lib.css'),
-                    collect.local('examples').select('example-lib.js'),
+                    collect.local().select('example-bootstrap.css'),
+                    collect.local().select('example-lib.css'),
+                    collect.local().select('example-lib.js'),
                     [
                         'bootstrap/slickgrid.less',
                         'components/bootstrap/less/variables.less'
