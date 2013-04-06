@@ -18,13 +18,13 @@ The package can be installed easily with bower.
     $ bower install slickgrid-bootstrap
 
 
-# Running the examples locally
+### Running the examples locally
 
 You can now load 
 `components/slickgrid-bootstrap/examples/example-bootstrap.html` from your browser.
 
 
-# Alternate installation
+### Alternate installation
 
 If instead of `bower`, you would like to use an alternative installation method,
 clone the repository from git, and further process it, according to your
