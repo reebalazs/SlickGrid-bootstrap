@@ -3,21 +3,21 @@
         "examples/example-bootstrap.less"
     ],
     "example-lib.css": [
-        "bower:bootstrap:docs/assets/css/bootstrap.css",
-        "bower:slickgrid:slick.grid.css"
+        ["bower", "bootstrap", "docs/assets/css/bootstrap.css"],
+        ["bower", "slickgrid", "slick.grid.css"]
     ],
     "example-lib.js": [
-        "bower:jquery:jquery.js",
-        "bower:slickgrid:lib/jquery.event.drag-2.0.min.js",
-        "bower:jquery-ui:ui/jquery.ui.core.js",
-        "bower:jquery-ui:ui/jquery.ui.widget.js",
-        "bower:jquery-ui:ui/jquery.ui.mouse.js",
-        "bower:jquery-ui:ui/jquery.ui.resizable.js",
-        "bower:jquery-ui:ui/jquery.ui.sortable.js",
-        "bower:slickgrid:slick.core.js",
-        "bower:slickgrid:slick.grid.js",
-        "bower:slickgrid:slick.dataview.js",
-        "bower:slickgrid:plugins/slick.checkboxselectcolumn.js",
-        "bower:slickgrid:plugins/slick.rowselectionmodel.js"
+        ["bower", "jquery", "jquery.js"],
+        ["bower", "slickgrid", "lib/jquery.event.drag-2.0.min.js"],
+        ["bower", "jquery-ui", "ui/jquery.ui.core.js"],
+        ["bower", "jquery-ui", "ui/jquery.ui.widget.js"],
+        ["bower", "jquery-ui", "ui/jquery.ui.mouse.js"],
+        ["bower", "jquery-ui", "ui/jquery.ui.resizable.js"],
+        ["bower", "jquery-ui", "ui/jquery.ui.sortable.js"],
+        ["bower", "slickgrid", "slick.core.js"],
+        ["bower", "slickgrid", "slick.grid.js"],
+        ["bower", "slickgrid", "slick.dataview.js"],
+        ["bower", "slickgrid", "plugins/slick.checkboxselectcolumn.js"],
+        ["bower", "slickgrid", "plugins/slick.rowselectionmodel.js"]
     ]
 }
