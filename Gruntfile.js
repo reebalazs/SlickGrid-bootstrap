@@ -1,11 +1,23 @@
 
 var collect = require('grunt-collection-helper');
 
+
 module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        copy: {
+            'default': {
+                files: {
+                    'examples/dist/':
+                        [].concat(
+                            collect.local('examples').select('example-lib.css'),
+                            collect.local('examples').select('example-lib.js')
+                        )
+                }
+            }
+        },
         less: {
             'default': {
                 options: {
@@ -23,20 +35,26 @@ module.exports = function(grunt) {
                 options: {
                     debounceDelay: 250
                 },
-                files: collect.local('examples').select('example-bootstrap.css').concat([
-                    'bootstrap/slickgrid.less',
-                    'components/bootstrap/less/variables.less'
-                ]),
-                tasks: ['less:default']
+                files: [].concat(
+                    collect.local('examples').select('example-bootstrap.css'),
+                    collect.local('examples').select('example-lib.css'),
+                    collect.local('examples').select('example-lib.js'),
+                    [
+                        'bootstrap/slickgrid.less',
+                        'components/bootstrap/less/variables.less'
+                    ]
+                ),
+                tasks: ['copy:default', 'less:default']
             }
         }
     });
 
     // Load plugins.
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default tasks.
-    grunt.registerTask('default', ['less:default']);
+    grunt.registerTask('default', ['copy:default', 'less:default']);
 
 };

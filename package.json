@@ -7,6 +7,7 @@
         "bower": "*",
         "grunt": ">=0.4",
         "grunt-contrib-jshint": "*",
+        "grunt-contrib-copy": "*",
         "grunt-contrib-uglify": "*",
         "grunt-contrib-concat": "*",
         "grunt-contrib-less": "*",
