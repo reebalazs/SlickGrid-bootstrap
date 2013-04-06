@@ -11,11 +11,26 @@ Please visit the
 To learn about SlickGrid, please check out the
 [SlickGrid wiki](https://github.com/mleibman/SlickGrid/wiki).
 
+## Installation
 
-## Running the examples locally
+The package can be installed easily with bower.
 
-To run the examples locally, you need to follow the steps needed for development,
-described in the next section.
+    $ bower install slickgrid-bootstrap
+
+
+# Running the examples locally
+
+You can now load 
+`components/slickgrid-bootstrap/examples/example-bootstrap.html` from your browser.
+
+
+# Alternate installation
+
+If instead of `bower`, you would like to use an alternative installation method,
+clone the repository from git, and further process it, according to your
+specific needs.
+
+    $ git clone git://github.com/reebalazs/SlickGrid-bootstrap.git
 
 
 ## Development
@@ -28,10 +43,9 @@ packages will be installed from their respective repositories.
 
 ### Installing NodeJS modules
 
-We will install the modules locally. First delete the local node_modules directory,
-as a precaution to make sure that no dependencies are preinstalled locally. (If you have node_modules that you need, start somewhere else.)
-
-    $ rm -rf node_modules
+We will install the modules locally. First please make sure that you have not
+installed any packages locally to the current directory or any of the subdirectories.
+(Please also read the next section about the local package binaries.)
 
 Then you can use `npm` to install both the sources and the necessary node tools, and change
 your working directory to the place of the installation:
@@ -51,15 +65,21 @@ Both methods ended up installing executables in the
 
     $ export PATH=$PWD/node_modules/.bin:$PATH
 
+Following this, you will be able to execute the installed commands `grunt`, `bower`, and
+so on, without specifying their exact execution path each time.
+
+
+#### Local package binaries
+
 Due to the way npm works, this directory will only hold the executables from those
 packages that were pulled in as a dependancy from our package, and have not been
 previously installed. If you have previously installed some package, it will
 be where you have installed it, and it will only be executable if you have
 made it so (globally installed modules are in the global system path, locally installed
-modules will be in their respective `.bin` directories.) If you have not done
-anything special with your NODE_PATH, and followed the above instrucions to delete the
-'node_modules' directory initially, tthen his should not be a concern for
-you.
+modules will be in their respective `.bin` directories, and should have been
+added to the path previously.) This should not normally
+be a concern for you, but may be the reason for not being to able to execute
+binaries provided by some package that otherwise is installed correctly.
 
 
 ### Installing front-end components
