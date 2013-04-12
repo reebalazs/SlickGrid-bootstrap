@@ -4,6 +4,8 @@ node_js:
 notifications:
   irc: "irc.freenode.org#greenfinity"
 before_script:
+  - "export PATH=\"$PWD/node_modules/.bin:$PATH\""
+  - "bower install"
   - "export DISPLAY=:99:0"
   - "echo 'Starting buster server'"
   - "./node_modules/buster/bin/buster-server &"
