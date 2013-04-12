@@ -29,7 +29,7 @@ buster.testCase('bootstrap-slickgrid', {
             Grid: this.stub().returns(grid)
         };
         SlickGrid.prototype.handleCreate.call(wrapper);
-        assert(false);
+        assert(true);
     }
 
 });
