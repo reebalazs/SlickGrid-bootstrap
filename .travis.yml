@@ -20,4 +20,4 @@ before_script:
   - sleep 5
   - echo 'Done phantomjs + firefox.'
 script:
-  - "./node_modules/buster/bin/buster-test"
+  - ./node_modules/buster/bin/buster-test
