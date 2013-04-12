@@ -2,11 +2,11 @@ language: node_js
 node_js:
   - 0.10
 notifications:
-  irc: "irc.freenode.org#greenfinity"
+  irc: irc.freenode.org#greenfinity
 before_script:
   - export PATH="$PWD/node_modules/.bin:$PATH"
   - bower install
-  - export DISPLAY=:99:0
+  - export DISPLAY=:99.0
   - echo 'Starting buster server...'
   - buster-server &
   - sleep 5
