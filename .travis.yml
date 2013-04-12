@@ -4,16 +4,20 @@ node_js:
 notifications:
   irc: "irc.freenode.org#greenfinity"
 before_script:
-  - "export PATH=\"$PWD/node_modules/.bin:$PATH\""
-  - "bower install"
-  - "export DISPLAY=:99:0"
-  - "echo 'Starting buster server'"
-  - "buster-server &"
-  - "sleep 3"
-  - "echo 'Done.'"
-  - "echo 'Starting phantomjs server'"
-  - "phantomjs ./node_modules/buster/script/phantom.js &"
-  - "sleep 3"
-  - "echo 'Done.'"
+  - export PATH="$PWD/node_modules/.bin:$PATH
+  - bower install
+  - export DISPLAY=:99:0
+  - echo 'Starting buster server...'
+  - buster-server &
+  - echo 'Starting xvfb for FF...'
+  - sh -e /etc/init.d/xvfb start
+  - sleep 5
+  - echo 'Done buster + xvfb.'
+  - echo 'Starting phantomjs browser...'
+  - phantomjs ./node_modules/buster/script/phantom.js &
+  - echo 'Starting firefox browser...'
+  - firefox http://localhost:1111/capture &
+  - sleep 5
+  - echo 'Done phantomjs + firefox.'
 script:
   - "./node_modules/buster/bin/buster-test"
