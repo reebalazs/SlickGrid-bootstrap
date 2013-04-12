@@ -8,7 +8,7 @@ before_script:
   - bower install
   - export DISPLAY=:99.0
   - echo 'Starting buster server...'
-  - buster-server &
+  - buster server &
   - sleep 5
   - echo 'Done.'
   - echo 'Starting xvfb for FF...'
@@ -24,4 +24,4 @@ before_script:
   - sleep 5
   - echo 'Done.'
 script:
-  - ./node_modules/buster/bin/buster-test
+  - buster test
