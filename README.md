@@ -1,3 +1,7 @@
+
+[![Build Status](https://travis-ci.org/reebalazs/slickgrid-bootstrap.png)](https://travis-ci.org/reebalazs/slickgrid-bootstrap)
+
+
 # SlickGrid BootStrap support
 
 Support to make SlickGrid work with Twitter Bootstrap styles.
