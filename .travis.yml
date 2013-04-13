@@ -4,6 +4,7 @@ node_js:
 notifications:
   irc: irc.freenode.org#greenfinity
 install:
+  - npm install .
   - export PATH="$PWD/node_modules/.bin:$PATH"
   - export DISPLAY=:99.0
   - bower install
