@@ -1,5 +1,5 @@
 
-[![Build Status](https://travis-ci.org/reebalazs/slickgrid-bootstrap.png)](https://travis-ci.org/reebalazs/slickgrid-bootstrap)
+[![Build Status](https://travis-ci.org/reebalazs/SlickGrid-bootstrap.png)](https://travis-ci.org/reebalazs/SlickGrid-bootstrap)
 
 
 # SlickGrid BootStrap support
