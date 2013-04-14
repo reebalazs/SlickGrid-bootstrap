@@ -12,7 +12,7 @@
         "grunt-contrib-concat": "*",
         "grunt-contrib-less": "*",
         "grunt-contrib-watch": "*",
-        "grunt-collection-helper": "git+https://github.com/reebalazs/grunt-collection-helper.git",
+        "grunt-collection-helper": "*",
         "buster": "*"
     }
 }
